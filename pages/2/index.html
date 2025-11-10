@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="/pages/page.css" rel="stylesheet" />
+    <link href="../../rsc/dark.css" id="style-ui-dark"  rel="stylesheet"/>
+    <link href="../../rsc/index.css" rel="stylesheet" />
+    
+    <script type="text/javascript" src="/pages/page.js"></script>
+    <script type="text/javascript" src="../../rsc/index.js"></script>
+    
+    <title>cheat-sheet</title>
+</head>
+
+<body class="has-hover" onclick="document.getElementById('menu').classList.remove('focus')" id="2">
+
+<header>
+    <a style="text-decoration: none" href="https://cheat-sheet.tech">
+        <img src="../../rsc/assets/logo.svg" alt="logo">
+        <p>cheat-sheet.tech</p>
+    </a>
+    <div id="menu" onclick="event.stopPropagation();this.classList.add('focus')">
+        <img src="../../rsc/assets/menu-dots.svg">
+        <div class="menu">
+            <a href="https://github.com/eloi-menaud/cheat-sheet/edit/main/pages/Git/Clean up local branches" style="all: unset">
+                <span><img src="../../rsc/assets/edit.svg"><p>Edit this cheat sheet</p></span>
+            </a>
+            <hr>
+            <a href="https://github.com/eloi-menaud/cheat-sheet" style="all: unset">
+                <span>
+                    <img src="../../rsc/assets/github.svg"><p>Source</p>
+                </span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <h1 title="title">Clean up local branches</h1>
+    <div id="type-selector">
+        <button onclick='show(this)' data-target="snippet" class="actif">snippet</button>
+        <button onclick='show(this)' data-target="details">details</button>
+    </div>
+    <div id="tech">
+        <button disabled title="tech">Git</button>
+    </div>
+    <img class="favorite" src="../../rsc/assets/favorite.svg" title="favorite" onclick="toggle_fav(this,'2')">
+</nav>
+<main>
+    <section id='snippet'>
+<p>Delete all local branches whose remote tracking branch no longer exists</p>
+<div class="code-block">
+            <div class="code-header">
+                <p class="language">sh</p>
+                <div><img class="copy" src="../../rsc/assets/copy.svg"></div>
+            </div>
+            <pre><code class="language-sh"><span class="hl-source hl-shell hl-bash"><span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">git</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> fetch<span class="hl-variable hl-parameter hl-option hl-shell"><span class="hl-punctuation hl-definition hl-parameter hl-shell"> --</span>prune</span></span> <span class="hl-keyword hl-operator hl-logical hl-and hl-shell">&amp;&amp;</span> <span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">git</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> for-each-ref<span class="hl-variable hl-parameter hl-option hl-shell"><span class="hl-punctuation hl-definition hl-parameter hl-shell"> --</span>format</span><span class="hl-keyword hl-operator hl-assignment hl-option hl-shell">=</span><span class="hl-string hl-quoted hl-single hl-shell"><span class="hl-punctuation hl-definition hl-string hl-begin hl-shell">&#39;</span>%(refname:short) %(upstream:track)<span class="hl-punctuation hl-definition hl-string hl-end hl-shell">&#39;</span></span> refs/heads/</span> <span class="hl-keyword hl-operator hl-logical hl-pipe hl-shell">|</span> <span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">awk</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> <span class="hl-string hl-quoted hl-single hl-shell"><span class="hl-punctuation hl-definition hl-string hl-begin hl-shell">&#39;</span>$2==&quot;gone&quot;{print $1}<span class="hl-punctuation hl-definition hl-string hl-end hl-shell">&#39;</span></span></span> <span class="hl-keyword hl-operator hl-logical hl-pipe hl-shell">|</span> <span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">xargs</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"><span class="hl-variable hl-parameter hl-option hl-shell"><span class="hl-punctuation hl-definition hl-parameter hl-shell"> -</span>r</span> git branch<span class="hl-variable hl-parameter hl-option hl-shell"><span class="hl-punctuation hl-definition hl-parameter hl-shell"> -</span>D</span></span>
+</span></code></pre>
+            </div>
+</section>
+<section id='details' class='hide'>
+<div class="code-block">
+            <div class="code-header">
+                <p class="language">bash</p>
+                <div><img class="copy" src="../../rsc/assets/copy.svg"></div>
+            </div>
+            <pre><code class="language-bash"><span class="hl-source hl-shell hl-bash"><span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">git</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> fetch<span class="hl-variable hl-parameter hl-option hl-shell"><span class="hl-punctuation hl-definition hl-parameter hl-shell"> --</span>prune</span> \<span class="hl-invalid hl-illegal hl-extraneous-spaces-after-line-continuation hl-shell"> </span>
+</span><span class="hl-meta hl-function-call hl-shell"></span><span class="hl-keyword hl-operator hl-logical hl-and hl-shell">&amp;&amp;</span> <span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">git</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> for-each-ref<span class="hl-variable hl-parameter hl-option hl-shell"><span class="hl-punctuation hl-definition hl-parameter hl-shell"> --</span>format</span><span class="hl-keyword hl-operator hl-assignment hl-option hl-shell">=</span><span class="hl-string hl-quoted hl-single hl-shell"><span class="hl-punctuation hl-definition hl-string hl-begin hl-shell">&#39;</span>%(refname:short) %(upstream:track)<span class="hl-punctuation hl-definition hl-string hl-end hl-shell">&#39;</span></span> refs/heads/ <span class="hl-punctuation hl-separator hl-continuation hl-line hl-shell">\
+</span></span><span class="hl-keyword hl-operator hl-logical hl-pipe hl-shell">|</span> <span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">awk</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> <span class="hl-string hl-quoted hl-single hl-shell"><span class="hl-punctuation hl-definition hl-string hl-begin hl-shell">&#39;</span>$2==&quot;gone&quot;{print $1}<span class="hl-punctuation hl-definition hl-string hl-end hl-shell">&#39;</span></span> <span class="hl-punctuation hl-separator hl-continuation hl-line hl-shell">\
+</span></span><span class="hl-keyword hl-operator hl-logical hl-pipe hl-shell">|</span> <span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">xargs</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"><span class="hl-variable hl-parameter hl-option hl-shell"><span class="hl-punctuation hl-definition hl-parameter hl-shell"> -</span>r</span> git branch<span class="hl-variable hl-parameter hl-option hl-shell"><span class="hl-punctuation hl-definition hl-parameter hl-shell"> -</span>D</span></span>
+</span></code></pre>
+            </div>
+<ul>
+<li><code>git fetch --prune</code> : updates remote-tracking references and removes those that no longer exist on the remote</li>
+<li><code>git for-each-ref [...] heads/</code>: lists local branches with their upstream status, returning &quot;gone&quot; if the tracked remote branch has been deleted.</li>
+<li><code>awk '$2==&quot;gone&quot;{print $1}'</code> : selects only local branches whose remote no longer exists.</li>
+<li><code>xargs -r git branch -D</code> : force-deletes these local branches, doing nothing if the list is empty (-r).</li>
+</ul>
+<h2>Créer un alias <code>clean-local-branches</code> :</h2>
+<div class="code-block">
+            <div class="code-header">
+                <p class="language">sh</p>
+                <div><img class="copy" src="../../rsc/assets/copy.svg"></div>
+            </div>
+            <pre><code class="language-sh"><span class="hl-source hl-shell hl-bash"><span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">git</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> config<span class="hl-variable hl-parameter hl-option hl-shell"><span class="hl-punctuation hl-definition hl-parameter hl-shell"> --</span>global</span> alias.clean-local-branches <span class="hl-string hl-quoted hl-double hl-shell"><span class="hl-punctuation hl-definition hl-string hl-begin hl-shell">&quot;</span>git fetch --prune &amp;&amp; git for-each-ref --format=&#39;%(refname:short) %(upstream:track)&#39; refs/heads/ | awk &#39;<span class="hl-constant hl-character hl-escape hl-shell">\$</span>2==<span class="hl-constant hl-character hl-escape hl-shell">\&quot;</span>gone<span class="hl-constant hl-character hl-escape hl-shell">\&quot;</span>{print <span class="hl-constant hl-character hl-escape hl-shell">\$</span>1}&#39; | xargs -r git branch -D<span class="hl-punctuation hl-definition hl-string hl-end hl-shell">&quot;</span></span></span>
+</span></code></pre>
+            </div>
+<p>use it :</p>
+<div class="code-block">
+            <div class="code-header">
+                <p class="language">sh</p>
+                <div><img class="copy" src="../../rsc/assets/copy.svg"></div>
+            </div>
+            <pre><code class="language-sh"><span class="hl-source hl-shell hl-bash"><span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">git</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> clean-local-branches</span>
+</span></code></pre>
+            </div>
+</section>
+</main>
+</body>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="/pages/page.css" rel="stylesheet" />
+    <link href="../../rsc/dark.css" id="style-ui-dark"  rel="stylesheet"/>
+    <link href="../../rsc/index.css" rel="stylesheet" />
+    
+    <script type="text/javascript" src="/pages/page.js"></script>
+    <script type="text/javascript" src="../../rsc/index.js"></script>
+    
+    <title>cheat-sheet</title>
+</head>
+
+<body class="has-hover" onclick="document.getElementById('menu').classList.remove('focus')" id="3">
+
+<header>
+    <a style="text-decoration: none" href="https://cheat-sheet.tech">
+        <img src="../../rsc/assets/logo.svg" alt="logo">
+        <p>cheat-sheet.tech</p>
+    </a>
+    <div id="menu" onclick="event.stopPropagation();this.classList.add('focus')">
+        <img src="../../rsc/assets/menu-dots.svg">
+        <div class="menu">
+            <a href="https://github.com/eloi-menaud/cheat-sheet/edit/main/pages/Git/Squash commits" style="all: unset">
+                <span><img src="../../rsc/assets/edit.svg"><p>Edit this cheat sheet</p></span>
+            </a>
+            <hr>
+            <a href="https://github.com/eloi-menaud/cheat-sheet" style="all: unset">
+                <span>
+                    <img src="../../rsc/assets/github.svg"><p>Source</p>
+                </span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <h1 title="title">Squash commits</h1>
+    <div id="type-selector">
+        <button onclick='show(this)' data-target="snippet" class="actif">snippet</button>
+        <button onclick='show(this)' data-target="details">details</button>
+    </div>
+    <div id="tech">
+        <button disabled title="tech">Git</button>
+    </div>
+    <img class="favorite" src="../../rsc/assets/favorite.svg" title="favorite" onclick="toggle_fav(this,'3')">
+</nav>
+<main>
+    <section id='snippet'>
+<blockquote>
+<p>Using <strong>main</strong> as target merge branch, replace all <strong>main</strong> by your target branch</p>
+</blockquote>
+<div class="code-block">
+            <div class="code-header">
+                <p class="language">sh</p>
+                <div><img class="copy" src="../../rsc/assets/copy.svg"></div>
+            </div>
+            <pre><code class="language-sh"><span class="hl-source hl-shell hl-bash"><span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">git</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> reset<span class="hl-variable hl-parameter hl-option hl-shell"><span class="hl-punctuation hl-definition hl-parameter hl-shell"> --</span>soft</span> <span class="hl-meta hl-group hl-expansion hl-command hl-parens hl-shell"><span class="hl-punctuation hl-definition hl-variable hl-shell">$</span><span class="hl-punctuation hl-section hl-parens hl-begin hl-shell">(</span><span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">git</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> merge-base origin/main HEAD</span><span class="hl-punctuation hl-section hl-parens hl-end hl-shell">)</span></span></span>
+<span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">git</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> add<span class="hl-variable hl-parameter hl-option hl-shell"><span class="hl-punctuation hl-definition hl-parameter hl-shell"> -</span>A</span></span>
+<span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">git</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> commit</span>
+<span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">git</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> fetch origin</span>
+<span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">git</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> rebase origin/main</span>
+<span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">git</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> push<span class="hl-variable hl-parameter hl-option hl-shell"><span class="hl-punctuation hl-definition hl-parameter hl-shell"> --</span>force</span></span>
+</span></code></pre>
+            </div>
+</section>
+<section id='details' class='hide'>
+<blockquote>
+<p>Using <strong>main</strong> as target merge branch, replace all <strong>main</strong> by your target branch</p>
+</blockquote>
+<h3>1 Reset your branch to the common ancestor with target branch</h3>
+<div class="code-block">
+            <div class="code-header">
+                <p class="language">sh</p>
+                <div><img class="copy" src="../../rsc/assets/copy.svg"></div>
+            </div>
+            <pre><code class="language-sh"><span class="hl-source hl-shell hl-bash"><span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">git</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> reset<span class="hl-variable hl-parameter hl-option hl-shell"><span class="hl-punctuation hl-definition hl-parameter hl-shell"> --</span>soft</span> <span class="hl-meta hl-group hl-expansion hl-command hl-parens hl-shell"><span class="hl-punctuation hl-definition hl-variable hl-shell">$</span><span class="hl-punctuation hl-section hl-parens hl-begin hl-shell">(</span><span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">git</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> merge-base origin/main HEAD</span><span class="hl-punctuation hl-section hl-parens hl-end hl-shell">)</span></span></span>
+</span></code></pre>
+            </div>
+<h3>2 Create a clean commit (or multiple well-structured ones)</h3>
+<p>adding everything but you can fine grain</p>
+<div class="code-block">
+            <div class="code-header">
+                <p class="language">sh</p>
+                <div><img class="copy" src="../../rsc/assets/copy.svg"></div>
+            </div>
+            <pre><code class="language-sh"><span class="hl-source hl-shell hl-bash"><span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">git</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> add<span class="hl-variable hl-parameter hl-option hl-shell"><span class="hl-punctuation hl-definition hl-parameter hl-shell"> -</span>A</span></span>
+</span></code></pre>
+            </div>
+<p>commit your changes</p>
+<div class="code-block">
+            <div class="code-header">
+                <p class="language">sh</p>
+                <div><img class="copy" src="../../rsc/assets/copy.svg"></div>
+            </div>
+            <pre><code class="language-sh"><span class="hl-source hl-shell hl-bash"><span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">git</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> commit</span>
+</span></code></pre>
+            </div>
+<h3>3 (Optional) Rebase your work on top of the latest main</h3>
+<p>Ensures any conflicts are resolved locally, making the merge seamless</p>
+<div class="code-block">
+            <div class="code-header">
+                <p class="language">sh</p>
+                <div><img class="copy" src="../../rsc/assets/copy.svg"></div>
+            </div>
+            <pre><code class="language-sh"><span class="hl-source hl-shell hl-bash"><span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">git</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> fetch origin</span>
+<span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">git</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> rebase origin/main</span>
+</span></code></pre>
+            </div>
+<h3>4 Force-push your rewritten commit history</h3>
+<div class="code-block">
+            <div class="code-header">
+                <p class="language">sh</p>
+                <div><img class="copy" src="../../rsc/assets/copy.svg"></div>
+            </div>
+            <pre><code class="language-sh"><span class="hl-source hl-shell hl-bash"><span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">git</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> push<span class="hl-variable hl-parameter hl-option hl-shell"><span class="hl-punctuation hl-definition hl-parameter hl-shell"> --</span>force</span></span>
+</span></code></pre>
+            </div>
+</section>
+</main>
+</body>

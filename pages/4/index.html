@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="/pages/page.css" rel="stylesheet" />
+    <link href="../../rsc/dark.css" id="style-ui-dark"  rel="stylesheet"/>
+    <link href="../../rsc/index.css" rel="stylesheet" />
+    
+    <script type="text/javascript" src="/pages/page.js"></script>
+    <script type="text/javascript" src="../../rsc/index.js"></script>
+    
+    <title>cheat-sheet</title>
+</head>
+
+<body class="has-hover" onclick="document.getElementById('menu').classList.remove('focus')" id="4">
+
+<header>
+    <a style="text-decoration: none" href="https://cheat-sheet.tech">
+        <img src="../../rsc/assets/logo.svg" alt="logo">
+        <p>cheat-sheet.tech</p>
+    </a>
+    <div id="menu" onclick="event.stopPropagation();this.classList.add('focus')">
+        <img src="../../rsc/assets/menu-dots.svg">
+        <div class="menu">
+            <a href="https://github.com/eloi-menaud/cheat-sheet/edit/main/pages/Shell/Flow Control" style="all: unset">
+                <span><img src="../../rsc/assets/edit.svg"><p>Edit this cheat sheet</p></span>
+            </a>
+            <hr>
+            <a href="https://github.com/eloi-menaud/cheat-sheet" style="all: unset">
+                <span>
+                    <img src="../../rsc/assets/github.svg"><p>Source</p>
+                </span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <h1 title="title">Flow Control</h1>
+    <div id="type-selector">
+        <button onclick='show(this)' data-target="snippet" class="actif">snippet</button>
+        <button onclick='show(this)' data-target="details">details</button>
+    </div>
+    <div id="tech">
+        <button disabled title="tech">Shell</button>
+    </div>
+    <img class="favorite" src="../../rsc/assets/favorite.svg" title="favorite" onclick="toggle_fav(this,'4')">
+</nav>
+<main>
+    <h1>if elif else</h1>
+<p>Run a code block based on one or more <em>conditions</em></p>
+<div class="code-block">
+            <div class="code-header">
+                <p class="language">sh</p>
+                <div><img class="copy" src="../../rsc/assets/copy.svg"></div>
+            </div>
+            <pre><code class="language-sh"><span class="hl-source hl-shell hl-bash"><span class="hl-keyword hl-control hl-if hl-begin hl-shell">if</span> <span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">test</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> condition</span>
+<span class="hl-keyword hl-control hl-if hl-then hl-shell">then</span>
+    <span class="hl-meta hl-function-call hl-shell"><span class="hl-support hl-function hl-echo hl-shell">echo</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> <span class="hl-string hl-quoted hl-double hl-shell"><span class="hl-punctuation hl-definition hl-string hl-begin hl-shell">&quot;</span>condition is true<span class="hl-punctuation hl-definition hl-string hl-end hl-shell">&quot;</span></span></span>
+<span class="hl-keyword hl-control hl-if hl-elif hl-shell">elif</span> <span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">test</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> other_condition</span>
+<span class="hl-keyword hl-control hl-if hl-then hl-shell">then</span>
+    <span class="hl-meta hl-function-call hl-shell"><span class="hl-support hl-function hl-echo hl-shell">echo</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> <span class="hl-string hl-quoted hl-double hl-shell"><span class="hl-punctuation hl-definition hl-string hl-begin hl-shell">&quot;</span>other_condition is true<span class="hl-punctuation hl-definition hl-string hl-end hl-shell">&quot;</span></span></span>
+<span class="hl-keyword hl-control hl-if hl-else hl-shell">else</span>
+    <span class="hl-meta hl-function-call hl-shell"><span class="hl-support hl-function hl-echo hl-shell">echo</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> <span class="hl-string hl-quoted hl-double hl-shell"><span class="hl-punctuation hl-definition hl-string hl-begin hl-shell">&quot;</span>condition and other_condition is false<span class="hl-punctuation hl-definition hl-string hl-end hl-shell">&quot;</span></span></span>
+<span class="hl-keyword hl-control hl-if hl-end hl-shell">fi</span>
+</span></code></pre>
+            </div>
+<h1>Case</h1>
+<p>Run a code block depending on which pattern matches the value of a variable.</p>
+<div class="code-block">
+            <div class="code-header">
+                <p class="language">sh</p>
+                <div><img class="copy" src="../../rsc/assets/copy.svg"></div>
+            </div>
+            <pre><code class="language-sh"><span class="hl-source hl-shell hl-bash"><span class="hl-keyword hl-control hl-case hl-begin hl-shell">case</span> var_to_test <span class="hl-keyword hl-control hl-case hl-in hl-shell">in</span>
+  value<span class="hl-keyword hl-control hl-case hl-item hl-shell">)</span>
+    <span class="hl-meta hl-function-call hl-shell"><span class="hl-support hl-function hl-echo hl-shell">echo</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> <span class="hl-string hl-quoted hl-double hl-shell"><span class="hl-punctuation hl-definition hl-string hl-begin hl-shell">&quot;</span>var_to_test equal &#39;value&#39;<span class="hl-punctuation hl-definition hl-string hl-end hl-shell">&quot;</span></span></span>
+    <span class="hl-punctuation hl-terminator hl-case hl-shell">;;</span>
+  value1 <span class="hl-keyword hl-operator hl-logical hl-shell">|</span> value2<span class="hl-keyword hl-control hl-case hl-item hl-shell">)</span>
+    <span class="hl-meta hl-function-call hl-shell"><span class="hl-support hl-function hl-echo hl-shell">echo</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> <span class="hl-string hl-quoted hl-double hl-shell"><span class="hl-punctuation hl-definition hl-string hl-begin hl-shell">&quot;</span>var_to_test equal &#39;value1&#39; or &#39;value2&#39;<span class="hl-punctuation hl-definition hl-string hl-end hl-shell">&quot;</span></span></span>
+    <span class="hl-punctuation hl-terminator hl-case hl-shell">;;</span>
+  <span class="hl-keyword hl-operator hl-regexp hl-quantifier hl-shell">*</span>index.md<span class="hl-keyword hl-control hl-case hl-item hl-shell">)</span>
+    <span class="hl-meta hl-function-call hl-shell"><span class="hl-support hl-function hl-echo hl-shell">echo</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> <span class="hl-string hl-quoted hl-double hl-shell"><span class="hl-punctuation hl-definition hl-string hl-begin hl-shell">&quot;</span>var_to_test equal &#39;*test&#39; glob motif<span class="hl-punctuation hl-definition hl-string hl-end hl-shell">&quot;</span></span></span>
+    <span class="hl-punctuation hl-terminator hl-case hl-shell">;;</span>
+  <span class="hl-keyword hl-operator hl-regexp hl-quantifier hl-shell">*</span><span class="hl-keyword hl-control hl-case hl-item hl-shell">)</span>
+    <span class="hl-meta hl-function-call hl-shell"><span class="hl-support hl-function hl-echo hl-shell">echo</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> <span class="hl-string hl-quoted hl-double hl-shell"><span class="hl-punctuation hl-definition hl-string hl-begin hl-shell">&quot;</span>var_to_test match nothing above<span class="hl-punctuation hl-definition hl-string hl-end hl-shell">&quot;</span></span></span>
+    <span class="hl-punctuation hl-terminator hl-case hl-shell">;;</span>
+<span class="hl-keyword hl-control hl-case hl-end hl-shell">esac</span>
+</span></code></pre>
+            </div>
+<h1>While (loop)</h1>
+<p>Repeatedly run a code block while the <em>condition</em> is true.</p>
+<div class="code-block">
+            <div class="code-header">
+                <p class="language">sh</p>
+                <div><img class="copy" src="../../rsc/assets/copy.svg"></div>
+            </div>
+            <pre><code class="language-sh"><span class="hl-source hl-shell hl-bash"><span class="hl-comment hl-line hl-number-sign hl-shell"><span class="hl-punctuation hl-definition hl-comment hl-begin hl-shell">#</span></span><span class="hl-comment hl-line hl-number-sign hl-shell"> condition</span><span class="hl-comment hl-line hl-number-sign hl-shell">
+</span><span class="hl-keyword hl-control hl-while hl-shell">while</span> <span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">condition</span></span>
+<span class="hl-keyword hl-control hl-do hl-shell">do</span>
+  <span class="hl-meta hl-function-call hl-shell"><span class="hl-support hl-function hl-echo hl-shell">echo</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> <span class="hl-string hl-quoted hl-double hl-shell"><span class="hl-punctuation hl-definition hl-string hl-begin hl-shell">&quot;</span>execution block<span class="hl-punctuation hl-definition hl-string hl-end hl-shell">&quot;</span></span></span>
+<span class="hl-keyword hl-control hl-done hl-shell">done</span>
+</span></code></pre>
+            </div><div class="code-block">
+            <div class="code-header">
+                <p class="language">sh</p>
+                <div><img class="copy" src="../../rsc/assets/copy.svg"></div>
+            </div>
+            <pre><code class="language-sh"><span class="hl-source hl-shell hl-bash"><span class="hl-comment hl-line hl-number-sign hl-shell"><span class="hl-punctuation hl-definition hl-comment hl-begin hl-shell">#</span></span><span class="hl-comment hl-line hl-number-sign hl-shell"> lopping over command return</span><span class="hl-comment hl-line hl-number-sign hl-shell">
+</span><span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell"><span class="hl-meta hl-group hl-expansion hl-command hl-parens hl-shell"><span class="hl-punctuation hl-definition hl-variable hl-shell">$</span><span class="hl-punctuation hl-section hl-parens hl-begin hl-shell">(</span><span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">ls</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> .</span><span class="hl-punctuation hl-section hl-parens hl-end hl-shell">)</span></span></span></span> <span class="hl-keyword hl-operator hl-logical hl-pipe hl-shell">|</span> <span class="hl-keyword hl-control hl-while hl-shell">while</span> <span class="hl-meta hl-function-call hl-shell"><span class="hl-support hl-function hl-read hl-shell">read</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> line</span>
+<span class="hl-keyword hl-control hl-do hl-shell">do</span>
+  <span class="hl-meta hl-function-call hl-shell"><span class="hl-support hl-function hl-echo hl-shell">echo</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> <span class="hl-string hl-quoted hl-double hl-shell"><span class="hl-punctuation hl-definition hl-string hl-begin hl-shell">&quot;</span>Line: <span class="hl-meta hl-group hl-expansion hl-parameter hl-shell"><span class="hl-punctuation hl-definition hl-variable hl-shell">$</span><span class="hl-variable hl-other hl-readwrite hl-shell">line</span></span><span class="hl-punctuation hl-definition hl-string hl-end hl-shell">&quot;</span></span></span>
+<span class="hl-keyword hl-control hl-done hl-shell">done</span>
+</span></code></pre>
+            </div><div class="code-block">
+            <div class="code-header">
+                <p class="language">sh</p>
+                <div><img class="copy" src="../../rsc/assets/copy.svg"></div>
+            </div>
+            <pre><code class="language-sh"><span class="hl-source hl-shell hl-bash"><span class="hl-comment hl-line hl-number-sign hl-shell"><span class="hl-punctuation hl-definition hl-comment hl-begin hl-shell">#</span></span><span class="hl-comment hl-line hl-number-sign hl-shell"> looping over file content</span><span class="hl-comment hl-line hl-number-sign hl-shell">
+</span><span class="hl-keyword hl-control hl-while hl-shell">while</span> <span class="hl-meta hl-function-call hl-shell"><span class="hl-support hl-function hl-read hl-shell">read</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> line</span>
+<span class="hl-keyword hl-control hl-do hl-shell">do</span>
+  <span class="hl-meta hl-function-call hl-shell"><span class="hl-support hl-function hl-echo hl-shell">echo</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> <span class="hl-string hl-quoted hl-double hl-shell"><span class="hl-punctuation hl-definition hl-string hl-begin hl-shell">&quot;</span>Line: <span class="hl-meta hl-group hl-expansion hl-parameter hl-shell"><span class="hl-punctuation hl-definition hl-variable hl-shell">$</span><span class="hl-variable hl-other hl-readwrite hl-shell">line</span></span><span class="hl-punctuation hl-definition hl-string hl-end hl-shell">&quot;</span></span></span>
+<span class="hl-keyword hl-control hl-done hl-shell">done</span><span class="hl-meta hl-function-call hl-arguments hl-shell"> <span class="hl-keyword hl-operator hl-assignment hl-redirection hl-shell">&lt;</span> file.txt</span>
+</span></code></pre>
+            </div>
+<h1>Until (loop)</h1>
+<p>Repeatedly run a code block until the condition is true.</p>
+<div class="code-block">
+            <div class="code-header">
+                <p class="language">sh</p>
+                <div><img class="copy" src="../../rsc/assets/copy.svg"></div>
+            </div>
+            <pre><code class="language-sh"><span class="hl-source hl-shell hl-bash"><span class="hl-keyword hl-control hl-until hl-shell">until</span> <span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">condition</span></span>
+<span class="hl-keyword hl-control hl-do hl-shell">do</span>
+  <span class="hl-meta hl-function-call hl-shell"><span class="hl-support hl-function hl-echo hl-shell">echo</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> <span class="hl-string hl-quoted hl-double hl-shell"><span class="hl-punctuation hl-definition hl-string hl-begin hl-shell">&quot;</span>execution block<span class="hl-punctuation hl-definition hl-string hl-end hl-shell">&quot;</span></span></span>
+<span class="hl-keyword hl-control hl-done hl-shell">done</span>
+</span></code></pre>
+            </div>
+<h1>for (loop)</h1>
+<div class="code-block">
+            <div class="code-header">
+                <p class="language">sh</p>
+                <div><img class="copy" src="../../rsc/assets/copy.svg"></div>
+            </div>
+            <pre><code class="language-sh"><span class="hl-source hl-shell hl-bash"><span class="hl-comment hl-line hl-number-sign hl-shell"><span class="hl-punctuation hl-definition hl-comment hl-begin hl-shell">#</span></span><span class="hl-comment hl-line hl-number-sign hl-shell"> from static list</span><span class="hl-comment hl-line hl-number-sign hl-shell">
+</span><span class="hl-keyword hl-control hl-for hl-shell">for</span><span class="hl-meta hl-group hl-for hl-shell"> item <span class="hl-keyword hl-control hl-in hl-shell">in</span> a b c d</span>
+<span class="hl-keyword hl-control hl-do hl-shell">do</span>
+    <span class="hl-meta hl-function-call hl-shell"><span class="hl-support hl-function hl-echo hl-shell">echo</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> <span class="hl-string hl-quoted hl-double hl-shell"><span class="hl-punctuation hl-definition hl-string hl-begin hl-shell">&quot;</span>execution block<span class="hl-punctuation hl-definition hl-string hl-end hl-shell">&quot;</span></span></span>
+<span class="hl-keyword hl-control hl-done hl-shell">done</span>
+</span></code></pre>
+            </div><div class="code-block">
+            <div class="code-header">
+                <p class="language">sh</p>
+                <div><img class="copy" src="../../rsc/assets/copy.svg"></div>
+            </div>
+            <pre><code class="language-sh"><span class="hl-source hl-shell hl-bash"><span class="hl-comment hl-line hl-number-sign hl-shell"><span class="hl-punctuation hl-definition hl-comment hl-begin hl-shell">#</span></span><span class="hl-comment hl-line hl-number-sign hl-shell"> from glob motif</span><span class="hl-comment hl-line hl-number-sign hl-shell">
+</span><span class="hl-keyword hl-control hl-for hl-shell">for</span><span class="hl-meta hl-group hl-for hl-shell"> file <span class="hl-keyword hl-control hl-in hl-shell">in</span> <span class="hl-keyword hl-operator hl-regexp hl-quantifier hl-shell">*</span>.txt</span>
+<span class="hl-keyword hl-control hl-do hl-shell">do</span>
+    <span class="hl-meta hl-function-call hl-shell"><span class="hl-support hl-function hl-echo hl-shell">echo</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> <span class="hl-string hl-quoted hl-double hl-shell"><span class="hl-punctuation hl-definition hl-string hl-begin hl-shell">&quot;</span>txt file: <span class="hl-meta hl-group hl-expansion hl-parameter hl-shell"><span class="hl-punctuation hl-definition hl-variable hl-shell">$</span><span class="hl-variable hl-other hl-readwrite hl-shell">file</span></span><span class="hl-punctuation hl-definition hl-string hl-end hl-shell">&quot;</span></span></span>
+<span class="hl-keyword hl-control hl-done hl-shell">done</span>
+</span></code></pre>
+            </div><div class="code-block">
+            <div class="code-header">
+                <p class="language">sh</p>
+                <div><img class="copy" src="../../rsc/assets/copy.svg"></div>
+            </div>
+            <pre><code class="language-sh"><span class="hl-source hl-shell hl-bash"><span class="hl-comment hl-line hl-number-sign hl-shell"><span class="hl-punctuation hl-definition hl-comment hl-begin hl-shell">#</span></span><span class="hl-comment hl-line hl-number-sign hl-shell"> from command</span><span class="hl-comment hl-line hl-number-sign hl-shell">
+</span><span class="hl-keyword hl-control hl-for hl-shell">for</span><span class="hl-meta hl-group hl-for hl-shell"> user <span class="hl-keyword hl-control hl-in hl-shell">in</span> <span class="hl-meta hl-group hl-expansion hl-command hl-parens hl-shell"><span class="hl-punctuation hl-definition hl-variable hl-shell">$</span><span class="hl-punctuation hl-section hl-parens hl-begin hl-shell">(</span><span class="hl-meta hl-function-call hl-shell"><span class="hl-variable hl-function hl-shell">ls</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> .</span><span class="hl-punctuation hl-section hl-parens hl-end hl-shell">)</span></span></span>
+<span class="hl-keyword hl-control hl-do hl-shell">do</span>
+    <span class="hl-meta hl-function-call hl-shell"><span class="hl-support hl-function hl-echo hl-shell">echo</span></span><span class="hl-meta hl-function-call hl-arguments hl-shell"> <span class="hl-string hl-quoted hl-double hl-shell"><span class="hl-punctuation hl-definition hl-string hl-begin hl-shell">&quot;</span>Hello <span class="hl-meta hl-group hl-expansion hl-parameter hl-shell"><span class="hl-punctuation hl-definition hl-variable hl-shell">$</span><span class="hl-variable hl-other hl-readwrite hl-shell">user</span></span><span class="hl-punctuation hl-definition hl-string hl-end hl-shell">&quot;</span></span></span>
+<span class="hl-keyword hl-control hl-done hl-shell">done</span>
+</span></code></pre>
+            </div>
+<h1>Loops Control</h1>
+<div class="code-block">
+            <div class="code-header">
+                <p class="language">shell</p>
+                <div><img class="copy" src="../../rsc/assets/copy.svg"></div>
+            </div>
+            <pre><code class="language-shell"><span class="hl-text hl-plain">IFS=&quot;:&quot; # redefined the char separator to &#39;:&#39; 
+{while/until/for}
+do
+  continue # skip to the next interation 
+  break    # exit the loop
+done
+</span></code></pre>
+            </div>
+</main>
+</body>

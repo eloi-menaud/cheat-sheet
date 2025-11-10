@@ -1,22 +1,22 @@
 const indexation = [
   {
-    "id": "00001",
-    "title": "Syntaxe",
-    "tech": "Yaml"
+    "id": 1,
+    "tech": "Yaml",
+    "title": "Syntaxe"
   },
   {
-    "id": "00002",
-    "title": "Flow Control",
-    "tech": "Shell"
+    "id": 4,
+    "tech": "Shell",
+    "title": "Flow Control"
   },
   {
-    "id": "00000",
-    "title": "Squash commits",
-    "tech": "Git"
+    "id": 3,
+    "tech": "Git",
+    "title": "Squash commits"
   },
   {
-    "id": "00003",
-    "title": "Clean up local branches",
-    "tech": "Git"
+    "id": 2,
+    "tech": "Git",
+    "title": "Clean up local branches"
   }
-]
+];

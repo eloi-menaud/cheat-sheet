@@ -29,15 +29,35 @@ nav{
     h1 {
         font-size: 1.35rem;
         font-weight: 400;
+        margin-right: auto;
     }
-    p#tech {
-        font-size: 0.85em;
-        margin-left: auto;
+    div#tech, div#type-selector {
+        font-size: 0.8em;
         margin-right: 1.25rem;
 
         border: 1px solid var(--border-1);
-        padding: 0.25rem 0.75rem;
-        border-radius: 5px;
+        padding: 0.3rem;
+        border-radius: 7px;
+        button{
+            border: none;
+            border-radius: 3px;
+            font-size: inherit;
+            padding: 0.2rem 0.25rem;
+            background-color: var(--bg-1);
+            &:not(:disabled):hover{
+                background-color: var(--bg-2);
+                cursor: pointer;
+            }
+        }
+
+    }
+    div#type-selector{
+        button{
+            color: var(--grey-2);
+        }
+        button.actif{
+            color: var(--text-2);
+        }
     }
 }
 
@@ -57,28 +77,28 @@ main{
     }
     h1{
         font-weight: 600;
-        padding-top: 2.3rem;
+        padding-top: 8rem;
     }
     h2{
-        padding-top: 2rem;
+        padding-top: 5rem;
     }
     h3{
         font-size: 1.2rem;
-        padding-top: 1.4rem;
+        padding-top: 3rem;
     }
     h4{
-        padding-top: 1.4rem;
+        padding-top: 3rem;
         font-size: 1.1rem;
         font-weight: 400;
     }
 
     p {
-        padding-left: 0.5rem ;
+        /*padding-left: 0.5rem ;*/
         color: var(--text-1);
         font-family: "Google Sans Code", monospace;
         line-height: 1.5;
     }
-    p strong{color: var(--text-2);}
+    p strong{color: var(--text-2); font-weight: 600;}
     p em{color: var(--text-2);}
     hr{
         width: 50%;
@@ -89,7 +109,7 @@ main{
         margin: 5rem auto;
     }
 
-    p code{
+    code:not(pre code){
         font-family: "Google Sans Code", monospace;
         background-color: var(--bg-codeline);
         box-shadow: inset 0 0 0 0.065rem var(--border-codeline);
@@ -104,11 +124,23 @@ main{
         margin-bottom: 2rem;
         position: relative;
         padding: 0.8rem 0.2rem 0.2rem 0.2rem;
+        font-size: 1rem;
         pre{
             border-radius: 5px;
             padding: 0.8rem;
             font-family: "Google Sans Code", monospace;
             overflow: scroll;
+            
+            --selection-bg: hsl(196, 67, 45);
+            
+            ::selection {
+                background: #00ee63;             
+                color: black; 
+            }
+            ::-moz-selection {
+                background: #00ee63;    
+                color: black;
+            }
         }
         div.code-header{
             width: 100%;
@@ -182,9 +214,10 @@ main{
         li::before{
             content: "•";
             padding-right: 0.2rem;
-            color: var(--grey-1);
+            color: var(--grey-2);
         }
         li{
+            margin: 1rem 0;
             color: inherit;
             >ul{
                 transform: translateX(0.2rem);
@@ -225,11 +258,11 @@ main{
 
 @keyframes flashCopied {
     0% {
-        filter: filter: var(--icon-brightness);
+        filter: var(--icon-brightness);
         content: url("../rsc/assets/copied.svg");
     }
     100% {
-        filter: filter: var(--icon-brightness);
+        filter: var(--icon-brightness);
         content: url("../rsc/assets/copied.svg");
     }
 }
@@ -254,6 +287,3 @@ main{
         width: 100% !important;
     }
 }
-
-
-

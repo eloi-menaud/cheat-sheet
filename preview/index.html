@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cheat-sheet preview</title>
+    
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="preview.js"></script>
+    
+    <link rel="stylesheet" href="preview.css">
+    <link rel="stylesheet" href="../rsc/index.css">
+    <link rel="stylesheet" href="../pages/page.css">
+    <link rel="stylesheet" href="../rsc/dark.css">
+
+</head>
+<body onclick="document.getElementById('menu').classList.remove('focus')">
+    <header>
+        <a style="text-decoration: none" href="https://cheat-sheet.tech">
+            <img src="../rsc/assets/logo.svg" alt="logo">
+            <p>cheat-sheet.tech</p>
+        </a>
+        <div id="menu" onclick="event.stopPropagation();this.classList.add('focus')">
+            <img src="../rsc/assets/menu-dots.svg">
+            <div class="menu">
+                <a href="https://github.com/eloi-menaud/cheat-sheet" style="all: unset">
+                    <span>
+                        <img src="../rsc/assets/github.svg"><p>Source</p>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    
+    <div id="selector">
+        <button class="markdown" onclick="show('markdown')">markdown</button>
+        <button class="render" onclick="render();show('render')">render</button>
+    </div>
+    <main>
+        <section id="markdown">
+            <textarea spellcheck="false" id="markdown-input">Write your markdow here</textarea>
+        </section>
+    
+        <section id="render">
+            <i>Code bloc don't have syntaxe highliting here</i>
+            <div id="render-html"></div>
+        </section>
+    </main>
+
+</body>
+</html>
+
+

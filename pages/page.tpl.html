@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="/pages/page.css" rel="stylesheet" />
+    <link href="../../rsc/dark.css" id="style-ui-dark"  rel="stylesheet"/>
+    <link href="../../rsc/index.css" rel="stylesheet" />
+    
+    <script type="text/javascript" src="/pages/page.js"></script>
+    <script type="text/javascript" src="../../rsc/index.js"></script>
+    
+    <title>cheat-sheet</title>
+</head>
+
+<body class="has-hover" onclick="document.getElementById('menu').classList.remove('focus')" id="%ID%">
+
+<header>
+    <a style="text-decoration: none" href="https://cheat-sheet.tech">
+        <img src="../../rsc/assets/logo.svg" alt="logo">
+        <p>cheat-sheet.tech</p>
+    </a>
+    <div id="menu" onclick="event.stopPropagation();this.classList.add('focus')">
+        <img src="../../rsc/assets/menu-dots.svg">
+        <div class="menu">
+            <a href="https://github.com/eloi-menaud/cheat-sheet/edit/main/pages/%TECH%/%TITLE%" style="all: unset">
+                <span><img src="../../rsc/assets/edit.svg"><p>Edit this cheat sheet</p></span>
+            </a>
+            <hr>
+            <a href="https://github.com/eloi-menaud/cheat-sheet" style="all: unset">
+                <span>
+                    <img src="../../rsc/assets/github.svg"><p>Source</p>
+                </span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <h1 title="title">%TITLE%</h1>
+    <div id="type-selector">
+        <button onclick='show(this)' data-target="snippet" class="actif">snippet</button>
+        <button onclick='show(this)' data-target="details">details</button>
+    </div>
+    <div id="tech">
+        <button disabled title="tech">%TECH%</button>
+    </div>
+    <img class="favorite" src="../../rsc/assets/favorite.svg" title="favorite" onclick="toggle_fav(this,'%ID%')">
+</nav>
+<main>
+    %CONTENT%
+</main>
+</body>

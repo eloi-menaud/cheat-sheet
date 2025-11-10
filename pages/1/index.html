@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="/pages/page.css" rel="stylesheet" />
+    <link href="../../rsc/dark.css" id="style-ui-dark"  rel="stylesheet"/>
+    <link href="../../rsc/index.css" rel="stylesheet" />
+    
+    <script type="text/javascript" src="/pages/page.js"></script>
+    <script type="text/javascript" src="../../rsc/index.js"></script>
+    
+    <title>cheat-sheet</title>
+</head>
+
+<body class="has-hover" onclick="document.getElementById('menu').classList.remove('focus')" id="1">
+
+<header>
+    <a style="text-decoration: none" href="https://cheat-sheet.tech">
+        <img src="../../rsc/assets/logo.svg" alt="logo">
+        <p>cheat-sheet.tech</p>
+    </a>
+    <div id="menu" onclick="event.stopPropagation();this.classList.add('focus')">
+        <img src="../../rsc/assets/menu-dots.svg">
+        <div class="menu">
+            <a href="https://github.com/eloi-menaud/cheat-sheet/edit/main/pages/Yaml/Syntaxe" style="all: unset">
+                <span><img src="../../rsc/assets/edit.svg"><p>Edit this cheat sheet</p></span>
+            </a>
+            <hr>
+            <a href="https://github.com/eloi-menaud/cheat-sheet" style="all: unset">
+                <span>
+                    <img src="../../rsc/assets/github.svg"><p>Source</p>
+                </span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <h1 title="title">Syntaxe</h1>
+    <div id="type-selector">
+        <button onclick='show(this)' data-target="snippet" class="actif">snippet</button>
+        <button onclick='show(this)' data-target="details">details</button>
+    </div>
+    <div id="tech">
+        <button disabled title="tech">Yaml</button>
+    </div>
+    <img class="favorite" src="../../rsc/assets/favorite.svg" title="favorite" onclick="toggle_fav(this,'1')">
+</nav>
+<main>
+    <p><a href="https://yaml.org/spec/1.2.2/">Official YAML Specifications</a></p>
+<div class="code-block">
+            <div class="code-header">
+                <p class="language">yaml</p>
+                <div><img class="copy" src="../../rsc/assets/copy.svg"></div>
+            </div>
+            <pre><code class="language-yaml"><span class="hl-source hl-yaml"><span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">object</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span>
+
+  <span class="hl-comment hl-line hl-number-sign hl-yaml"><span class="hl-punctuation hl-definition hl-comment hl-line hl-number-sign hl-yaml">#</span> literal string
+</span>  <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">key</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml">a string</span>
+  <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">key</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-string hl-quoted hl-double hl-yaml"><span class="hl-punctuation hl-definition hl-string hl-begin hl-yaml">&quot;</span>a string<span class="hl-punctuation hl-definition hl-string hl-end hl-yaml">&quot;</span></span>
+  <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">key</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-string hl-quoted hl-single hl-yaml"><span class="hl-punctuation hl-definition hl-string hl-begin hl-yaml">&#39;</span>a string<span class="hl-punctuation hl-definition hl-string hl-end hl-yaml">&#39;</span></span>
+
+  <span class="hl-comment hl-line hl-number-sign hl-yaml"><span class="hl-punctuation hl-definition hl-comment hl-line hl-number-sign hl-yaml">#</span> literal number
+</span>  <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">key</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-constant hl-numeric hl-integer hl-yaml">2</span> <span class="hl-comment hl-line hl-number-sign hl-yaml"><span class="hl-punctuation hl-definition hl-comment hl-line hl-number-sign hl-yaml">#</span> int
+</span>  <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">key</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-constant hl-numeric hl-float hl-yaml">2.5</span> <span class="hl-comment hl-line hl-number-sign hl-yaml"><span class="hl-punctuation hl-definition hl-comment hl-line hl-number-sign hl-yaml">#</span> float
+</span>  <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">key</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml">1e+10</span> <span class="hl-comment hl-line hl-number-sign hl-yaml"><span class="hl-punctuation hl-definition hl-comment hl-line hl-number-sign hl-yaml">#</span> exponential form
+</span>
+  <span class="hl-comment hl-line hl-number-sign hl-yaml"><span class="hl-punctuation hl-definition hl-comment hl-line hl-number-sign hl-yaml">#</span> literal boolean
+</span>  <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">key</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-constant hl-language hl-boolean hl-yaml">true</span>
+
+  <span class="hl-comment hl-line hl-number-sign hl-yaml"><span class="hl-punctuation hl-definition hl-comment hl-line hl-number-sign hl-yaml">#</span> literal dates (ISO 8601)
+</span>  <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">key</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-constant hl-other hl-timestamp hl-yaml">2001-01-23 10:00:00</span>
+
+  <span class="hl-comment hl-line hl-number-sign hl-yaml"><span class="hl-punctuation hl-definition hl-comment hl-line hl-number-sign hl-yaml">#</span> literal null
+</span>  <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">key</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-constant hl-language hl-null hl-yaml">null</span>
+
+  <span class="hl-comment hl-line hl-number-sign hl-yaml"><span class="hl-punctuation hl-definition hl-comment hl-line hl-number-sign hl-yaml">#</span> type casting
+</span>  <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">key</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-meta hl-property hl-yaml"><span class="hl-storage hl-type hl-tag-handle hl-yaml">!!float</span></span> <span class="hl-constant hl-numeric hl-integer hl-yaml">10</span> <span class="hl-comment hl-line hl-number-sign hl-yaml"><span class="hl-punctuation hl-definition hl-comment hl-line hl-number-sign hl-yaml">#</span> 10.0
+</span>  <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">gpa</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-meta hl-property hl-yaml"><span class="hl-storage hl-type hl-tag-handle hl-yaml">!!str</span></span> <span class="hl-constant hl-numeric hl-float hl-yaml">3.5</span> <span class="hl-comment hl-line hl-number-sign hl-yaml"><span class="hl-punctuation hl-definition hl-comment hl-line hl-number-sign hl-yaml">#</span> &quot;3.5&quot;
+</span>
+
+
+  <span class="hl-comment hl-line hl-number-sign hl-yaml"><span class="hl-punctuation hl-definition hl-comment hl-line hl-number-sign hl-yaml">#</span> list of items
+</span>  <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">key</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> 
+    <span class="hl-punctuation hl-definition hl-block hl-sequence hl-item hl-yaml">-</span> <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml">element 1</span>
+    <span class="hl-punctuation hl-definition hl-block hl-sequence hl-item hl-yaml">-</span> <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml">element 2</span>
+  <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">key</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-meta hl-flow-sequence hl-yaml"><span class="hl-punctuation hl-definition hl-sequence hl-begin hl-yaml">[</span><span class="hl-string hl-quoted hl-single hl-yaml"><span class="hl-punctuation hl-definition hl-string hl-begin hl-yaml">&#39;</span>element 1<span class="hl-punctuation hl-definition hl-string hl-end hl-yaml">&#39;</span></span><span class="hl-punctuation hl-separator hl-sequence hl-yaml">,</span> <span class="hl-string hl-quoted hl-double hl-yaml"><span class="hl-punctuation hl-definition hl-string hl-begin hl-yaml">&quot;</span>element 2<span class="hl-punctuation hl-definition hl-string hl-end hl-yaml">&quot;</span></span><span class="hl-punctuation hl-definition hl-sequence hl-end hl-yaml">]</span></span>
+
+  <span class="hl-comment hl-line hl-number-sign hl-yaml"><span class="hl-punctuation hl-definition hl-comment hl-line hl-number-sign hl-yaml">#</span> list of objects
+</span>  <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">key</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span>
+  <span class="hl-punctuation hl-definition hl-block hl-sequence hl-item hl-yaml">-</span> <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">a</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-constant hl-numeric hl-integer hl-yaml">1</span>
+    <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">b</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-constant hl-numeric hl-integer hl-yaml">2</span>
+  <span class="hl-punctuation hl-definition hl-block hl-sequence hl-item hl-yaml">-</span> <span class="hl-meta hl-flow-mapping hl-yaml"><span class="hl-punctuation hl-definition hl-mapping hl-begin hl-yaml">{</span><span class="hl-meta hl-flow-pair hl-key hl-yaml"><span class="hl-string hl-unquoted hl-plain hl-in hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">a</span></span></span><span class="hl-string hl-unquoted hl-plain hl-in hl-yaml"></span><span class="hl-meta hl-flow-pair hl-yaml"><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span></span><span class="hl-meta hl-flow-pair hl-value hl-yaml"> <span class="hl-constant hl-numeric hl-integer hl-yaml">1</span></span><span class="hl-punctuation hl-separator hl-mapping hl-yaml">,</span> <span class="hl-meta hl-flow-pair hl-key hl-yaml"><span class="hl-string hl-unquoted hl-plain hl-in hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">b</span></span></span><span class="hl-string hl-unquoted hl-plain hl-in hl-yaml"></span><span class="hl-meta hl-flow-pair hl-yaml"><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span></span><span class="hl-meta hl-flow-pair hl-value hl-yaml"> <span class="hl-constant hl-numeric hl-integer hl-yaml">2</span></span><span class="hl-punctuation hl-definition hl-mapping hl-end hl-yaml">}</span></span>
+  <span class="hl-punctuation hl-definition hl-block hl-sequence hl-item hl-yaml">-</span>
+    <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">a</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-constant hl-numeric hl-integer hl-yaml">1</span>
+    <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">b</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-constant hl-numeric hl-integer hl-yaml">2</span>
+
+
+
+  <span class="hl-comment hl-line hl-number-sign hl-yaml"><span class="hl-punctuation hl-definition hl-comment hl-line hl-number-sign hl-yaml">#</span> newline will be removed
+</span>  <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">key</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-keyword hl-control hl-flow hl-block-scalar hl-folded hl-yaml">&gt;</span>
+<span class="hl-string hl-unquoted hl-block hl-yaml">    Lorem ipsum
+    dolor sit
+    amet
+  
+</span>  <span class="hl-comment hl-line hl-number-sign hl-yaml"><span class="hl-punctuation hl-definition hl-comment hl-line hl-number-sign hl-yaml">#</span> formating will be preserved
+</span>  <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">key</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-keyword hl-control hl-flow hl-block-scalar hl-literal hl-yaml">|</span>
+<span class="hl-string hl-unquoted hl-block hl-yaml">    Lorem ipsum
+    dolor sit
+    amet
+
+
+
+</span>  <span class="hl-comment hl-line hl-number-sign hl-yaml"><span class="hl-punctuation hl-definition hl-comment hl-line hl-number-sign hl-yaml">#</span> anchors literal
+</span>  <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">key</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-meta hl-property hl-yaml"><span class="hl-keyword hl-control hl-property hl-anchor hl-yaml"><span class="hl-punctuation hl-definition hl-anchor hl-yaml">&amp;</span></span><span class="hl-entity hl-name hl-other hl-anchor hl-yaml">anchor-name</span></span> <span class="hl-string hl-quoted hl-double hl-yaml"><span class="hl-punctuation hl-definition hl-string hl-begin hl-yaml">&quot;</span>word<span class="hl-punctuation hl-definition hl-string hl-end hl-yaml">&quot;</span></span>
+  <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">key</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-keyword hl-control hl-flow hl-alias hl-yaml"><span class="hl-punctuation hl-definition hl-alias hl-yaml">*</span></span><span class="hl-variable hl-other hl-alias hl-yaml">anchor-name</span> <span class="hl-comment hl-line hl-number-sign hl-yaml"><span class="hl-punctuation hl-definition hl-comment hl-line hl-number-sign hl-yaml">#</span> value will refer to anchor &amp;{ANCHOR}, giving &quot;word&quot; here
+</span>
+
+  <span class="hl-comment hl-line hl-number-sign hl-yaml"><span class="hl-punctuation hl-definition hl-comment hl-line hl-number-sign hl-yaml">#</span> anchoring object
+</span>  <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">base</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-meta hl-property hl-yaml"><span class="hl-keyword hl-control hl-property hl-anchor hl-yaml"><span class="hl-punctuation hl-definition hl-anchor hl-yaml">&amp;</span></span><span class="hl-entity hl-name hl-other hl-anchor hl-yaml">anchor-name-obj</span></span>
+    <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">key</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-string hl-quoted hl-single hl-yaml"><span class="hl-punctuation hl-definition hl-string hl-begin hl-yaml">&#39;</span>work<span class="hl-punctuation hl-definition hl-string hl-end hl-yaml">&#39;</span></span>
+  <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">foo</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span>  <span class="hl-comment hl-line hl-number-sign hl-yaml"><span class="hl-punctuation hl-definition hl-comment hl-line hl-number-sign hl-yaml">#</span> value will expand to anchor &amp;{ANCHOR}
+</span>    <span class="hl-constant hl-language hl-merge hl-yaml">&lt;&lt;</span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-keyword hl-control hl-flow hl-alias hl-yaml"><span class="hl-punctuation hl-definition hl-alias hl-yaml">*</span></span><span class="hl-variable hl-other hl-alias hl-yaml">anchor-name-obj</span>
+    <span class="hl-string hl-unquoted hl-plain hl-out hl-yaml"><span class="hl-entity hl-name hl-tag hl-yaml">key2</span></span><span class="hl-punctuation hl-separator hl-key-value hl-mapping hl-yaml">:</span> <span class="hl-string hl-quoted hl-single hl-yaml"><span class="hl-punctuation hl-definition hl-string hl-begin hl-yaml">&#39;</span>word2<span class="hl-punctuation hl-definition hl-string hl-end hl-yaml">&#39;</span></span>
+  <span class="hl-comment hl-line hl-number-sign hl-yaml"><span class="hl-punctuation hl-definition hl-comment hl-line hl-number-sign hl-yaml">#</span> giving:
+</span>  <span class="hl-comment hl-line hl-number-sign hl-yaml"><span class="hl-punctuation hl-definition hl-comment hl-line hl-number-sign hl-yaml">#</span> foo:
+</span>  <span class="hl-comment hl-line hl-number-sign hl-yaml"><span class="hl-punctuation hl-definition hl-comment hl-line hl-number-sign hl-yaml">#</span>   key: &#39;work&#39;
+</span>  <span class="hl-comment hl-line hl-number-sign hl-yaml"><span class="hl-punctuation hl-definition hl-comment hl-line hl-number-sign hl-yaml">#</span>   key2: &#39;word2&#39;
+</span></span></code></pre>
+            </div>
+</main>
+</body>
