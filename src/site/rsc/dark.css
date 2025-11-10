@@ -1,0 +1,57 @@
+
+:root {
+    --bg-1           : hsla(0  , 0%  , 0%  , 1);
+    --bg-2           : hsla(330, 8%  , 5%  , 1);
+
+    --border-1        : hsl(288, 7%, 15%);
+    --border-2        : hsla(330, 1%  , 40% , 1);
+
+    --text-1         : hsla(330, 1%  , 75% , 1);
+    --text-2         : hsla(0  , 0%  , 100%, 1);
+
+    --grey-1         : hsla(300, 2%  , 18% , 1);
+    --grey-2         : hsla(330, 1%  , 50% , 1);
+    --grey-3         : hsla(0  , 0%  , 92% , 1);
+
+    --main           : hsla(145, 100%, 56% , 1);
+
+    --bg-codeline    : hsl(0, 0%, 7%);
+    --border-codeline: hsl(0, 0%, 20%);
+
+    --bg-popup-1 : rgba(0, 0, 0, 0.5);
+    --bg-popup-2 : hsla(0, 0%, 100%, 0.07);
+    --shadow-popup : 0 0 3rem black;
+
+    --error: #de4545;
+
+    --icon-brightness: brightness(2);
+}
+
+pre {
+    font-size: 1rem;
+    color: #FFFFFF;
+}
+pre .hl-keyword{
+    color: #69a6ee;
+}
+pre .hl-punctuation{
+    color: #b4b4b4;
+}
+pre .hl-comment{
+    color: #666;
+}	
+pre .hl-entity{
+    color: #e2bfff;
+}	
+pre .hl-storage, pre .hl-string{
+    color: #e989c6;
+}
+pre .hl-support, pre .hl-function{
+    color: #2bcd82;
+}
+pre .hl-invalid{
+    color: #db4251;
+}
+pre .hl-variable{
+    /*color: inherit;*/
+}

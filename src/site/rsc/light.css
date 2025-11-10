@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --bg-1           : hsl(0, 0%, 100%);
+    --bg-2           : hsla(330, 5%  , 95%  , 1);
+
+    --border-1        : hsl(288, 4%, 87%);
+    --border-2        : hsla(330, 1%  , 40%);
+
+    --text-1         : hsl(0, 0%, 10%);
+    --text-2         : hsl(0, 0%, 0%);
+
+    --grey-1         : hsla(300, 2%  , 68% , 1);
+    --grey-2         : hsla(330, 1%  , 50% , 1);
+    --grey-3         : hsla(0  , 0%  , 8% , 1);
+
+    --main           : hsl(146, 100%, 40%);
+
+    --bg-codeline    : hsl(0, 0%, 96%);
+    --border-codeline: hsl(0, 0%, 70%);
+
+    --bg-popup-1 : rgba(255, 255, 255, 0.5);
+    --bg-popup-2 : hsla(0, 0%, 0%, 0.07);
+    --shadow-popup : 0 0 3rem #dcdcdc;
+
+    --error: #ff4b4b;
+    --icon-brightness: brightness(0);
+}
+
+
+pre {
+    font-size: 1rem;
+    color: #FFFFFF;
+}
+pre .hl-keyword{
+    color: #0076ff;
+}
+pre .hl-punctuation{
+    color: #666;
+}
+pre .hl-comment{
+    color: #b4b4b4;
+}	
+pre .hl-entity{
+    color: #e2bfff;
+}	
+	
+pre .hl-storage, pre .hl-string{
+    color: #dd329d;
+}
+pre .hl-support, pre .hl-function{
+    color: #00a253;
+}
+pre .hl-invalid{
+    color: #db4251;
+}
+pre .hl-variable{
+    /*color: inherit;*/
+}

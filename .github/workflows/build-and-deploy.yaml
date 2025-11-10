@@ -1,0 +1,73 @@
+name: Rust CI et Déploiement
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  check-pr:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Validating pages/ structure
+        run: cargo run -- check
+
+
+  build-and-deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write # for 'git push' of *.id
+      pages: write    # To deploy github page
+      id-token: write # To deploy github page
+      
+
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Build site/ and generate missing .id
+        run: cargo run
+
+      - name: Push 'pages/*/*/*.id'
+        run: |
+          # Configure Git
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+
+          # push 'pages/*/*/*.id'
+          find pages -path "pages/*/*/*.id" -type f -print0 | xargs -0 git add
+          if git diff --cached --exit-code; then
+            echo "No pages/*/*/*.id to push"
+          else
+            git commit -m "auto: add generated .id [skip ci]"
+            git push
+          fi
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          publish_branch: gh-pages
