@@ -5,7 +5,7 @@ const indexation = [
     "title": "Syntaxe"
   },
   {
-    "id": 4,
+    "id": 2,
     "tech": "Shell",
     "title": "Flow Control"
   },
@@ -15,7 +15,7 @@ const indexation = [
     "title": "Squash commits"
   },
   {
-    "id": 2,
+    "id": 4,
     "tech": "Git",
     "title": "Clean up local branches"
   }
