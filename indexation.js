@@ -18,5 +18,10 @@ const indexation = [
     "id": 4,
     "tech": "Git",
     "title": "Clean up local branches"
+  },
+  {
+    "id": 5,
+    "tech": "Git",
+    "title": "Edit pushed commit message"
   }
 ];
