@@ -89,7 +89,7 @@ done
 
 
 # Loops Control
-```shell
+```sh
 IFS=":" # redefined the char separator to ':' 
 {while/until/for}
 do
